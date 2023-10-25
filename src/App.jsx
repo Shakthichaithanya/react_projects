@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
-
+import './App.css';
 export default function App() {
   const [password, setPassword] = useState("")
   const [numbersAllowed, setNumbersAllowed] = useState(false)
@@ -28,7 +28,7 @@ export default function App() {
   }
 
   return (
-    <>
+    <div className='main'>
     <div>
       <input placeholder='password' value={password} readOnly ref={passwordRef}/>
       <button onClick={copyPassword}>copy</button>
@@ -41,6 +41,6 @@ export default function App() {
       <input type='checkbox' defaultChecked={specialCharactersAlllowed} onChange={()=> setSpecialCharactersAlllowed((prev)=>!prev)}/>
       <>characters</>
     </div>
-    </>
+    </div>
   )
 }
